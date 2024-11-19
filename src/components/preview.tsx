@@ -1,16 +1,18 @@
 'use client';
 
-export function Preview({ children, ...props }: React.ComponentProps<'div'>) {
+export function Preview({ children }: React.PropsWithChildren) {
   return (
-    <div {...props} className="bg-ts p-8">
-      <div
-        className="bg-background rounded-lg px-4 py-3"
-        style={{
-          boxShadow:
-            'rgba(50, 50, 93, 0.3) 0px 13px 27px -5px, rgba(0, 0, 0, 0.45) 0px 8px 16px -8px',
-        }}
-      >
-        {children ?? <Placeholder />}
+    <div className="flex flex-grow items-center">
+      <div className="w-full bg-ts p-8">
+        <div
+          className="rounded-[4px] bg-background px-4 py-3"
+          style={{
+            boxShadow:
+              'rgba(50, 50, 93, 0.3) 0px 13px 27px -5px, rgba(0, 0, 0, 0.45) 0px 8px 16px -8px',
+          }}
+        >
+          {children ?? <Placeholder />}
+        </div>
       </div>
     </div>
   );

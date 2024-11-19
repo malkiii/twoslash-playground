@@ -9,7 +9,6 @@ export function Editor(props: React.ComponentProps<typeof MonacoEditor>) {
   return (
     <MonacoEditor
       {...props}
-      height="100dvh"
       theme="vs-dark"
       defaultLanguage="typescript"
       defaultValue="// some comment"

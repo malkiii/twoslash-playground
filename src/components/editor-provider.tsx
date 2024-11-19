@@ -1,4 +1,4 @@
-import { useRef, useContext, createContext } from 'react';
+import { useRef, useContext, useState, createContext } from 'react';
 import type { OnMount } from '@monaco-editor/react';
 
 type Editor = Parameters<OnMount>[0];
@@ -7,6 +7,7 @@ type EditorContextValue = {
   editorRef: React.MutableRefObject<Editor | undefined>;
   getCurrentCode: () => string;
   generateSnippet: () => void;
+  isGenerating: boolean;
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -18,12 +19,15 @@ export function useEditor() {
 
 export function EditorProvider({ children }: React.PropsWithChildren) {
   const editorRef = useRef<Editor>();
+  const [isGenerating, setIsGenerating] = useState(false);
 
   const getCurrentCode = () => editorRef.current?.getValue() ?? '';
-  const generateSnippet = () => {};
+  const generateSnippet = () => {
+    setIsGenerating(false);
+  };
 
   return (
-    <EditorContext.Provider value={{ editorRef, getCurrentCode, generateSnippet }}>
+    <EditorContext.Provider value={{ editorRef, getCurrentCode, generateSnippet, isGenerating }}>
       {children}
     </EditorContext.Provider>
   );
