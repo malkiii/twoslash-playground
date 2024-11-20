@@ -3,8 +3,8 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-const fontMono = fetch(new URL('../../../public/fonts/Caskaydia.ttf', import.meta.url)).then(
-  (res) => res.arrayBuffer(),
+const fontMono = fetch(new URL('fonts/RobotoMono.ttf', import.meta.url)).then((res) =>
+  res.arrayBuffer(),
 );
 
 export async function GET() {
