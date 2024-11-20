@@ -1,0 +1,23 @@
+@import './twoslash.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply h-dvh overflow-hidden bg-neutral-900 font-sans antialiased;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .overflow-auto {
+    scrollbar-color: theme(colors.neutral.700) transparent;
+  }
+}
+
+@layer components {
+  a,
+  button {
+    @apply rounded-sm bg-neutral-800 px-3 py-1.5 transition-colors duration-200 hover:bg-neutral-800/50;
+  }
+}
