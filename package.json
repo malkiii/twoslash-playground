@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "@monaco-editor/react": "^4.6.0",
-    "@next/third-parties": "^15.0.3",
     "@shikijs/twoslash": "^1.23.0",
     "next": "^14.2.3",
     "react": "^18.3.1",
