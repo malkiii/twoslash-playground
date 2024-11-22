@@ -15,7 +15,7 @@ export default function Content() {
         <Panel defaultSize={50} minSize={25} className="size-full">
           <Editor />
         </Panel>
-        <PanelResizeHandle className="h-full w-1.5 bg-neutral-500 transition-colors hover:bg-neutral-200 max-md:h-1.5 max-md:w-full" />
+        <PanelResizeHandle className="h-full w-2 bg-neutral-200 opacity-0 transition-opacity duration-200 hover:opacity-100 max-md:h-2 max-md:w-full" />
         <Panel defaultSize={50} minSize={25} className="flex size-full flex-col">
           <ActionBar />
           <Preview />
